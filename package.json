@@ -1,0 +1,26 @@
+{
+  "name": "bagua",
+  "version": "1.0.0",
+  "description": "chinese bagua",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kashtian/bagua.git"
+  },
+  "keywords": [
+    "bagua",
+    "webpack2"
+  ],
+  "author": "kash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kashtian/bagua/issues"
+  },
+  "homepage": "https://github.com/kashtian/bagua#readme",
+  "devDependencies": {
+    "webpack": "^2.2.1"
+  }
+}
