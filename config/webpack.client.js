@@ -1,19 +1,9 @@
-const postcss = [
-    require('autoprefixer')({
-        browsers: [
-			'Android >= 4',
-			'Chrome >= 35',
-			'Firefox >= 31',
-			'iOS >= 7',
-			'Opera >= 12',
-			'Safari >= 7.1',
-		]
-    })
-]
+const path = require('path');
+const vueConfig = require('./vue-loader.config');
 
 module.exports = {
     entry: {
-        app: './src/client-entry.js',
+        app: ['./src/client-entry.js'],
         vendor: [
             'vue',
             'vue-router',
@@ -21,15 +11,20 @@ module.exports = {
             'vuex-router-sync'
         ]
     },
+    output: {
+        path: path.join(process.cwd(), 'dist/static'),
+        filename: '[name].[chunkhash:7].js',
+        publicPath: '/static/'
+    },
     resolve: {
-        extensions: ['', '.vue', '.js']
+        extensions: ['.vue', '.js', '.json']
     },
     module: {
         rules: [
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
-                options: { postcss }
+                options: vueConfig
             },
             {
                 test: /\.js$/,
@@ -45,6 +40,5 @@ module.exports = {
                 }
             }
         ]
-    },
-    postcss
+    }
 }
