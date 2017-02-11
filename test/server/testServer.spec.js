@@ -1,9 +1,11 @@
 import should from 'should';
+import '../../server/connectDB';
+import personCtrl from  '../../server/controller/personCtrl';
 
-describe('Array', function() {
-    describe('indexOf', function() {
-        it('should return true 11', function() {
-            [1,2,3].indexOf(1).should.equal(0);
+describe('test mongoose', function() {
+    describe('person find', function() {
+        it('should return array', function() {
+            return personCtrl.find();
         })
     })
 })
