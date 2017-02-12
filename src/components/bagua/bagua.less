@@ -1,0 +1,75 @@
+@octagonColor: #ab4608;
+
+.octagon {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: @octagonColor;
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 124px;
+        border-style: solid;
+        border-width: 0px 88px 88px;
+        border-color: #fff #fff @octagonColor;
+    }
+    &::after {
+        top: auto;
+        bottom: 0px;
+        border-width: 88px 88px 0px;
+        border-color: @octagonColor #fff #fff;
+    }
+    .inner {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        .taiji-item {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 124px;
+            height: 150px;
+            margin-left: -62px;
+            padding-top: 5px;
+            box-sizing: border-box;
+            transform-origin: 50% 100%;
+            .desc {
+                margin-bottom: 5px;
+                font-size: 14px;
+                text-align: center;
+                letter-spacing: 5px;
+                text-indent: 5px;
+            }
+        }
+    }
+    .bagua-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 25%;
+        border: 2px solid #000;
+        border-bottom-width: 77px;
+        border-radius: 100%;
+        background-color: #fff;
+        transform: translate(-50%, -50%);
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0px;
+            width: 15px;
+            height: 15px;
+            border: 30px solid #fff;
+            border-radius: 100%;
+            background-color: #000;
+        }
+        &::after {
+            left: 0px;
+            border-color: #000;
+            background-color: #fff;
+        }
+    }
+}

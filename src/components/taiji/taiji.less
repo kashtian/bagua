@@ -1,0 +1,20 @@
+.taiji {
+    width: 50px;
+    height: 6px;
+    margin: 0px auto 5px;
+    background-color: #000;
+    &.yin {
+        background-color: transparent;
+        &::before, &::after {
+            content: '';
+            display: inline-block;
+            vertical-align: top;
+            width: calc(~'50% - 3px');
+            height: inherit;
+            background-color: #000;
+        }
+        &::after {
+            float: right;
+        }
+    }
+}

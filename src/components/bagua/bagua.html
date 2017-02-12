@@ -1,0 +1,9 @@
+<div class="octagon">
+    <div class="inner">
+        <div class="taiji-item" v-for="(item, index) in taijiArr" :style="{transform: 'rotate(' + 45 * index + 'deg)'}">
+            <div class="desc">{{item.desc}}</div>
+            <component :is="item.name"></component>
+        </div>
+        <div class="bagua-logo"></div>
+    </div>
+</div>

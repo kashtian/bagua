@@ -1,6 +1,7 @@
 module.exports = {
     preserveWhitespace: false,
     postcss: [
+        require('precss')(),
         require('autoprefixer')({
             browsers: [
                 'Android >= 4',

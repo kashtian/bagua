@@ -1,5 +1,9 @@
 <template>
-    <div>this is home page</div>
+    <div class="home">
+        <bagua></bagua>
+    </div>
 </template>
+
+<style lang="less" src="./home.less"></style>
 
 <script src="./home.js"></script>
