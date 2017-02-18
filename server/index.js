@@ -40,6 +40,8 @@ app.use(bodyParser.urlencoded({
 	extended: false
 }));
 
+app.use(express.static('public'));
+
 if (process.env.NODE_ENV === 'development') {
     require('../config/setup-dev-server')(app, {
         bundleUpdated: serverBundle => {

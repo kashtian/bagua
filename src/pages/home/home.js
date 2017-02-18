@@ -8,5 +8,11 @@ export default {
         title: '首页'
     }, 
 
+    mounted() {
+        let script = document.createElement('script');
+        script.src = '/js/lizi.js';
+        document.body.appendChild(script);
+    },
+
     components: all
 }
