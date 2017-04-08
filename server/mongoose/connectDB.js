@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import { dbHost } from '../config/sys.config';
+import { dbHostMongo } from '../../config/sys.config';
 
-let db = mongoose.connect(dbHost);
+let db = mongoose.connect(dbHostMongo);
 
 db.connection.on('error', err => {
     console.error('数据库连接失败：', err);

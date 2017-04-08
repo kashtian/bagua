@@ -1,4 +1,4 @@
-import Person from '../models/person';
+import Person from './person';
 
 let test = new Person({name: 'test_person'});
 

@@ -1,6 +1,6 @@
 import should from 'should';
-import '../../server/connectDB';
-import personCtrl from  '../../server/controller/personCtrl';
+import '../../server/mongoose/connectDB';
+import personCtrl from  '../../server/mongoose/personCtrl';
 
 describe('test mongoose', function() {
     describe('person find', function() {
