@@ -16,9 +16,9 @@ export default {
         return gua.findById(id, Object.assign({
             include: [{
                 model: yao.table,
-                attributes: ['name', 'desc', 'dExplain', 'xiang', 'xExplain']
+                attributes: {exclude: ['id', 'guaId']}
             }],
-            attributes: ['name', 'desc', 'dExplain', 'xiang', 'xExplain', 'elements']
+            attributes: {exclude: ['id']}
         }, options))
     }
 }
