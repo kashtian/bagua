@@ -1,7 +1,7 @@
-import gua from './gua';
-import yao from './yao';
+import Gua from './gua';
+import Yao from './yao';
 
 export {
-    gua,
-    yao
+    Gua,
+    Yao
 }

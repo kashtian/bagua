@@ -1,13 +1,18 @@
-import {yao} from '../model';
+import {Yao} from '../model';
+
+let fields = ['name', 'desc', 'xiang', 'guaId'];
 
 export default {
     addYao(model) {
-        return yao.add(model).then(() => {
-            console.log('add gua successfully.');
-        })
+        return Yao.checkFields(model, fields)
+                .then(() => {
+                    return Yao.create(model);
+                });
     },
 
     deleteYaoById(id) {
-        return yao.deleteById(id);
+        return Yao.destroy({
+            where: {id: id}
+        });
     }
 }

@@ -1,21 +1,26 @@
 import Sequelize from 'sequelize';
-import {gua, yao} from '../model';
+import {Gua, Yao} from '../model';
+
+let fields = ['name', 'desc', 'xiang', 'elements'];
 
 export default {
     addGua(model) {
-        return gua.add(model).then(() => {
-            console.log('add gua successfully.');
-        })
+        return Gua.checkFields(model, fields)
+            .then(() => {
+                return Gua.create(model);
+            });
     },
 
     deleteGuaById(id) {
-        return gua.deleteById(id);
+        return Gua.destroy({
+            where: {id: id}
+        });
     },
 
     findByIdWithYao(id, options) {
-        return gua.findById(id, Object.assign({
+        return Gua.findById(id, Object.assign({
             include: [{
-                model: yao.table,
+                model: Yao,
                 attributes: {exclude: ['id', 'guaId']}
             }],
             attributes: {exclude: ['id']}

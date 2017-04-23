@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import express from 'express';
 import bodyParser from 'body-parser';
+import session from 'express-session';
 import LRU from 'lru-cache';
 import serialize from 'serialize-javascript';
 
@@ -38,6 +39,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
 	extended: false
 }));
+
+app.use(session({
+    name: 'SSID',
+    secret: 'bagua',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        maxAge: 5 * 60 * 1000
+    }
+}))
 
 app.use(express.static('public'));
 

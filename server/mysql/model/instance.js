@@ -1,4 +1,5 @@
 import Sequelize from 'sequelize';
+import baseMethods from './baseMethods';
 
 const dbConfig = {
     database: 'bagua',
@@ -17,6 +18,12 @@ let sequelize = new Sequelize(dbConfig.database, dbConfig.user, dbConfig.passwor
         max: 5,
         min: 0,
         idle: 10000
+    },
+
+    define: {
+        timestamps: false,
+        freezeTableName: true,
+        classMethods: baseMethods
     }
 });
 

@@ -1,6 +1,7 @@
 import Sequelize from 'sequelize';
+import sequelize from '../instance';
 
-export default {
+export default sequelize.define('gua', {
     id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -27,8 +28,10 @@ export default {
         type: Sequelize.STRING,
         allowNull: true
     },
-    guaId: {
-        type: Sequelize.INTEGER,
+    elements: {
+        type: Sequelize.STRING,
         allowNull: false
     }
-}
+}, {
+    tableName: 'gua64'
+});

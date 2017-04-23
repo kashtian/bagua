@@ -1,36 +1,6 @@
-import Core from '../core';
-import tableFields from './table.config';
-import yao from '../yao';
+import Gua from './model';
+import Yao from '../yao/model';
 
-class Gua extends Core {
-    constructor() {
-        super('gua', tableFields, {
-            tableName: 'gua64'
-        });
+Gua.hasMany(Yao);
 
-        this.fields = ['name', 'desc', 'xiang', 'elements'];
-    }
-
-    add(model, options) {
-        return this.insert(model, this.fields, options);
-    }
-
-    updateById(model, id) {
-        return this.update(model, this.fields, {
-            where: {
-                id: id
-            }
-        })
-    }
-
-    deleteById(id) {
-        return this.destroy({
-            where: {id: id}
-        })
-    }
-}
-
-const gua = new Gua();
-gua.table.hasMany(yao.table);
-
-export default gua;
+export default Gua;
