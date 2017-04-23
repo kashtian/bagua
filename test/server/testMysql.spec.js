@@ -11,7 +11,7 @@ describe('Mysql', () => {
     // describe('add yao', () => {
     //     it ('add success', () => {
     //         return yaoService.addYao({
-    //             name: '九二',
+    //             name: '九三',
     //             desc: '见龙在田，利见大人',
     //             dExplain: '九二，龙已出现在地上，利于出现德高势隆的大人物。',
     //             xiang: '《象》曰："见龙在田"，德施普也。',

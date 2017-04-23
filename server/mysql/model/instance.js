@@ -24,7 +24,9 @@ let sequelize = new Sequelize(dbConfig.database, dbConfig.user, dbConfig.passwor
         timestamps: false,
         freezeTableName: true,
         classMethods: baseMethods
-    }
+    },
+
+    logging: false
 });
 
 sequelize.authenticate()
